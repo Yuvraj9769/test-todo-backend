@@ -21,6 +21,13 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Todo App API");
 });
 
+app.get("/test", (req, res) => {
+    res.json({
+        message: "This is a test route to verify that the server is working.",
+        timestamp: new Date(),
+    });
+});
+
 
 app.get("/api/v1/dummy", (req, res) => {
   res.json({
