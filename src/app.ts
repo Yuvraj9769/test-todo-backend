@@ -16,6 +16,68 @@ app.use(cors({
 }))
 
 
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the Todo App API");
+});
+
+
+app.get("/api/v1/dummy", (req, res) => {
+    res.json({ message: "This is a dummy route for testing purposes.", timestamp: new Date(), data: {
+        {
+                id: 1,
+                name: "John Doe",
+                email: "john.doe@example.com"
+            },
+            {
+                id: 2,
+                name: "Jane Smith",
+                email: "janesmith@gmail.com"
+            },
+             {
+                id: 3,
+                name: "Alice Johnson",
+                email: "alice.johnson@example.com"
+             },
+             {
+                id: 4,
+                name: "Bob Brown",
+                email: "bob.brown@example.com"
+             },
+             {
+                id: 5,
+                name: "Charlie Davis",
+                email: "charlie.davis@example.com"
+             },
+             {
+                id: 6,
+                name: "Eve Wilson",
+                email: "eve.wilson@example.com"
+             },
+                {
+                id: 7,
+                name: "Frank Miller",
+                email: "frank.miller@example.com"
+             },
+                {
+                id: 8,
+                name: "Grace Lee",
+                email: "grace.lee@example.com"
+             },
+             {
+                id: 9,
+                name: "Hank Green",
+                email: "hank.green@example.com"
+             },
+             {
+                id: 10,
+                name: "Ivy Turner",
+                email: "ivy.turner@example.com"
+             },
+    } });
+}
+
+
 // Importing routes
 import userRoutes from './routes/user.routes';
 import todoRoutes from './routes/todo.routes';
