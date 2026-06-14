@@ -21,4 +21,12 @@ jobs:
             key: ${{ secrets.HOSTINGER_SSH_KEY }}
 
             script: |
-            
+              cd ${{secrets.PROJECT_PATH}}
+
+              git pull origin main
+
+              npm ci
+
+              npm run build
+
+              pm2 restart yuvrajbackend
