@@ -16,9 +16,9 @@ jobs:
        - name: Deploy to Hostinger Express
          uses: appleboy/ssh-action@v1.0.3
          with: 
-            host: ${{ secrets.HOSTINGER_HOST }}
-            username: ${{ secrets.HOSTINGER_USERNAME }}
-            key: ${{ secrets.HOSTINGER_SSH_KEY }}
+            host: ${{ secrets.VPS_HOST }}
+            username: ${{ secrets.VPS_USER }}
+            key: ${{ secrets.BACKEND_SSH_KEY }}
 
             script: |
               cd ${{secrets.PROJECT_PATH}}
