@@ -1,0 +1,24 @@
+name: Deploy Backend To Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+   express-deploy:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
+
+       - name: Deploy to Hostinger Express
+         uses: appleboy/ssh-action@v1.0.3
+         with: 
+            host: ${{ secrets.HOSTINGER_HOST }}
+            username: ${{ secrets.HOSTINGER_USERNAME }}
+            key: ${{ secrets.HOSTINGER_SSH_KEY }}
+
+            script: |
+            
